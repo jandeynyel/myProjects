@@ -1,0 +1,48 @@
+
+
+function getComputerChoice(){
+    let choices = ["rock","paper", "scissors"];
+    return choices[Math.floor(Math.random()*3)];
+    }
+
+const computerSelection = getComputerChoice();
+  
+  function playRound(playerSelection, computerSelection){
+    const win="You chose " + playerSelection + " while computer chose " + computerSelection + ". You won!";
+    const lose="You chose " + playerSelection + " while computer chose " + computerSelection + ". You lost! Try again";
+    const draw="You chose " + playerSelection + " while computer chose " + computerSelection + ". It was a tie. Try again";
+
+    if(playerSelection.toLowerCase() == "rock" && computerSelection == "rock" ){
+      return draw;
+      }
+    else if(playerSelection.toLowerCase() == "rock" && computerSelection == "paper" ){
+      return lose;
+      }
+    else if(playerSelection.toLowerCase() == "rock" && computerSelection == "scissors" ){
+      return win;
+      }
+    else if(playerSelection.toLowerCase() == "paper" && computerSelection == "rock" ){
+      return win;
+      }
+    else if(playerSelection.toLowerCase() == "paper" && computerSelection == "paper" ){
+      return draw;
+      }
+    else if(playerSelection.toLowerCase() == "paper" && computerSelection == "scissors" ){
+      return lose;
+      }
+    else if(playerSelection.toLowerCase() == "scissors" && computerSelection == "rock" ){
+      return lose;
+      }
+    else if(playerSelection.toLowerCase() == "scissors" && computerSelection == "paper" ){
+      return win;
+      }
+    else if(playerSelection.toLowerCase() == "scissors" && computerSelection == "scissors" ){
+      return draw;
+      }
+      }
+
+  
+let playerSelection = prompt("Your Choice","")
+
+
+console.log(playRound(playerSelection, computerSelection));
